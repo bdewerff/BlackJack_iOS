@@ -14,8 +14,8 @@
 		1F6E156A2378EA3900C3826F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F6E15682378EA3900C3826F /* LaunchScreen.storyboard */; };
 		1F6E15752378EA3900C3826F /* BlackJack_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E15742378EA3900C3826F /* BlackJack_iOSTests.swift */; };
 		1F6E15802378EA3900C3826F /* BlackJack_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E157F2378EA3900C3826F /* BlackJack_iOSUITests.swift */; };
-		554590CD237F095C009E7F88 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554590CC237F095C009E7F88 /* Deck.swift */; };
-		5560CC992379C3D70045AAD0 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5560CC982379C3D70045AAD0 /* Card.swift */; };
+		554590CF237F15B1009E7F88 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554590CE237F15AB009E7F88 /* Card.swift */; };
+		554590D1237F15F6009E7F88 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554590D0237F15EF009E7F88 /* Deck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +49,8 @@
 		1F6E157B2378EA3900C3826F /* BlackJack_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlackJack_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F6E157F2378EA3900C3826F /* BlackJack_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackJack_iOSUITests.swift; sourceTree = "<group>"; };
 		1F6E15812378EA3900C3826F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		554590CC237F095C009E7F88 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Deck.swift; path = Assets.xcassets/Deck.swift; sourceTree = "<group>"; };
-		5560CC982379C3D70045AAD0 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = SOURCE_ROOT; };
+		554590CE237F15AB009E7F88 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		554590D0237F15EF009E7F88 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +107,8 @@
 				1F6E15662378EA3900C3826F /* Assets.xcassets */,
 				1F6E15682378EA3900C3826F /* LaunchScreen.storyboard */,
 				1F6E156B2378EA3900C3826F /* Info.plist */,
-				5560CC982379C3D70045AAD0 /* Card.swift */,
-				554590CC237F095C009E7F88 /* Deck.swift */,
+				554590CE237F15AB009E7F88 /* Card.swift */,
+				554590D0237F15EF009E7F88 /* Deck.swift */,
 			);
 			path = BlackJack_iOS;
 			sourceTree = "<group>";
@@ -262,9 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				554590CD237F095C009E7F88 /* Deck.swift in Sources */,
 				1F6E15622378EA3600C3826F /* ViewController.swift in Sources */,
-				5560CC992379C3D70045AAD0 /* Card.swift in Sources */,
+				554590D1237F15F6009E7F88 /* Deck.swift in Sources */,
+				554590CF237F15B1009E7F88 /* Card.swift in Sources */,
 				1F6E15602378EA3600C3826F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
