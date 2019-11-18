@@ -10,14 +10,14 @@ import UIKit
 
 public class Card
 {
-    enum Suit: String {
+    enum Suit: String, CaseIterable {
         case d
         case s
         case c
         case h
     }
     
-    enum Rank: String {
+    enum Rank: String, CaseIterable {
         case Ace = "a"
         case Two = "2"
         case Three = "3"

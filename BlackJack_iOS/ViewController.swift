@@ -13,9 +13,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        let card = Card(rank: Card.Rank.Ace, suit: Card.Suit.c)
-        print(card.toString())
+        let blackJackDeck = Deck.init(numDecks: 1)
         
+        for card in blackJackDeck.cards
+        {
+            print(card.toString())
+        }
     }
 
 }

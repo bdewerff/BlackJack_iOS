@@ -10,25 +10,24 @@ import UIKit
 
 class Deck {
 
-    private var cards: Array<String> = []
-    private var discardedCards: Array<String> = []
-    let deckNum = 1
+    var cards: Array<Card> = []
+    private var discardedCards: Array<Card> = []
 
-    
+    let deckNum = 1
     let numDecks = 1
     
-    func Deck(numDecks: Int){
-        var cards: Array<String>
-        var discardedCards: Array<String>
+    init(numDecks: Int){
+        cards = []
+        discardedCards = []
     
-    for _ in 0...1{
-        for suit in Card.Suit.values(){
-            for rank in Card.Rank.values(){
-                cards.append(Card(cardRank, cardSuit));
+        for _ in 1...numDecks{
+            for suit in Card.Suit.allCases{
+                for rank in Card.Rank.allCases{
+                    cards.append(Card(rank: rank, suit: suit));
             }
         }
     }
-    shuffle();
+    //shuffle();
     }
     
     func dealCard(){
@@ -40,7 +39,7 @@ class Deck {
         }
     }
     
-    func discardedCard(cardToReturn: String){
+    func discardedCard(cardToReturn: Card){
         discardedCards.append(cardToReturn)
     }
     
