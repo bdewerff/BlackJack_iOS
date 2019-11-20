@@ -27,7 +27,7 @@ class Deck {
             }
         }
     }
-    //shuffle();
+    shuffle();
     }
     
     func dealCard(){
