@@ -11,7 +11,7 @@ import UIKit
 class Deck {
 
     var cards: Array<Card> = []
-    private var discardedCards: Array<Card> = []
+    var discardedCards: Array<Card> = []
 
     let deckNum = 1
     let numDecks = 1
@@ -30,12 +30,13 @@ class Deck {
     shuffle();
     }
     
-    func dealCard(){
+    func dealCard()
+    {
         if !cards.isEmpty {
             return cards.removeFirst(1)
         }else{
-            addDiscardsToDeck();
-            return dealCard();
+            addDiscardsToDeck()
+            return dealCard()
         }
     }
     

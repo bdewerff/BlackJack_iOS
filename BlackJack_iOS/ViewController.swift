@@ -9,35 +9,35 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet var playerCardImageView: UIImageView!
+    @IBOutlet var gameView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let startingx = 300
-        let startingy = 239
-        let width = 90
-        let height = 128
+        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
         
         let blackJackDeck = Deck.init(numDecks: 1)
+        blackJackDeck.dealCard()
         
-        let imageName = blackJackDeck.cards[0].toString()
-        let image = UIImage(named: imageName)
-        let imageView = UIImageView(image: image)
+        let playerCardXDimension = playerCardImageView.frame.origin.x
+        let playerCardYDimension = playerCardImageView.frame.origin.y
         
-        let imageName2 = blackJackDeck.cards[1].toString()
-        let image2 = UIImage(named: imageName2)
-        let imageView2 = UIImageView(image: image2)
+        let playerCardImageName = blackJackDeck.cards[0].toString()
+        let playerCardImage = UIImage(named: playerCardImageName)
+        let playerCardImageView = UIImageView(image: playerCardImage)
+        //let cardImage = init(template: playerCardImageView)
+        //let cardImage.Create(frameX: Int(playerCardXDimension), frameY: Int(playerCardYDimension), card: blackJackDeck.cards[0], view: gameView)
+         
+        view.addSubview(playerCardImageView)
     
-        imageView.frame = CGRect(x: startingx, y: startingy, width: width, height: height)
-        imageView2.frame = CGRect(x: startingx + 20, y: startingy, width: width, height: height)
-        
-        view.addSubview(imageView)
-        
         for card in blackJackDeck.cards
         {
             print(card.toString())
         }
     }
-
+    
 }
 
