@@ -15,6 +15,7 @@
 		1F6E15752378EA3900C3826F /* BlackJack_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E15742378EA3900C3826F /* BlackJack_iOSTests.swift */; };
 		1F6E15802378EA3900C3826F /* BlackJack_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E157F2378EA3900C3826F /* BlackJack_iOSUITests.swift */; };
 		1FD48DB4238309C1007253CF /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD48DB3238309C1007253CF /* Hand.swift */; };
+		1FD48DB62385A2BA007253CF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD48DB52385A2BA007253CF /* Player.swift */; };
 		554590CF237F15B1009E7F88 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554590CE237F15AB009E7F88 /* Card.swift */; };
 		554590D1237F15F6009E7F88 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554590D0237F15EF009E7F88 /* Deck.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		1F6E157F2378EA3900C3826F /* BlackJack_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackJack_iOSUITests.swift; sourceTree = "<group>"; };
 		1F6E15812378EA3900C3826F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FD48DB3238309C1007253CF /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
+		1FD48DB52385A2BA007253CF /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		554590CE237F15AB009E7F88 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		554590D0237F15EF009E7F88 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +114,7 @@
 				554590CE237F15AB009E7F88 /* Card.swift */,
 				554590D0237F15EF009E7F88 /* Deck.swift */,
 				1FD48DB3238309C1007253CF /* Hand.swift */,
+				1FD48DB52385A2BA007253CF /* Player.swift */,
 			);
 			path = BlackJack_iOS;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				1FD48DB4238309C1007253CF /* Hand.swift in Sources */,
 				554590D1237F15F6009E7F88 /* Deck.swift in Sources */,
 				554590CF237F15B1009E7F88 /* Card.swift in Sources */,
+				1FD48DB62385A2BA007253CF /* Player.swift in Sources */,
 				1F6E15602378EA3600C3826F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

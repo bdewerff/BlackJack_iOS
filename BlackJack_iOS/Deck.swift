@@ -39,7 +39,7 @@ class Deck {
         }
     }
     
-    func discardedCard(cardToReturn: Card){
+    func discardCard(cardToReturn: Card){
         discardedCards.append(cardToReturn)
     }
     
