@@ -15,6 +15,7 @@
 		1F6E15752378EA3900C3826F /* BlackJack_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E15742378EA3900C3826F /* BlackJack_iOSTests.swift */; };
 		1F6E15802378EA3900C3826F /* BlackJack_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E157F2378EA3900C3826F /* BlackJack_iOSUITests.swift */; };
 		1FD48DB4238309C1007253CF /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD48DB3238309C1007253CF /* Hand.swift */; };
+		1FD48DB823884720007253CF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD48DB723884720007253CF /* Player.swift */; };
 		554590CF237F15B1009E7F88 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554590CE237F15AB009E7F88 /* Card.swift */; };
 		554590D1237F15F6009E7F88 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554590D0237F15EF009E7F88 /* Deck.swift */; };
 		555A983D2386103C005CBB85 /* CardImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555A983C2386103C005CBB85 /* CardImage.swift */; };
@@ -54,6 +55,7 @@
 		1F6E157F2378EA3900C3826F /* BlackJack_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackJack_iOSUITests.swift; sourceTree = "<group>"; };
 		1F6E15812378EA3900C3826F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FD48DB3238309C1007253CF /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
+		1FD48DB723884720007253CF /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		554590CE237F15AB009E7F88 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		554590D0237F15EF009E7F88 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		555A983C2386103C005CBB85 /* CardImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImage.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				1F6E156B2378EA3900C3826F /* Info.plist */,
 				554590CE237F15AB009E7F88 /* Card.swift */,
 				554590D0237F15EF009E7F88 /* Deck.swift */,
+				1FD48DB723884720007253CF /* Player.swift */,
 				1FD48DB3238309C1007253CF /* Hand.swift */,
 				555A983C2386103C005CBB85 /* CardImage.swift */,
 				555A983E23862817005CBB85 /* HandDisplay.swift */,
@@ -284,6 +287,7 @@
 				555A983F23862817005CBB85 /* HandDisplay.swift in Sources */,
 				555A983D2386103C005CBB85 /* CardImage.swift in Sources */,
 				554590CF237F15B1009E7F88 /* Card.swift in Sources */,
+				1FD48DB823884720007253CF /* Player.swift in Sources */,
 				1F6E15602378EA3600C3826F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

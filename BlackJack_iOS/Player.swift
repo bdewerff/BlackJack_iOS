@@ -16,7 +16,7 @@ class Player {
     
     func drawCards(numCards: Int){
         for _ in 1...numCards{
-            hand.append(card: self.deck.dealCard())
+            hand.add(card: self.deck.dealCard())
         }
     }
     
