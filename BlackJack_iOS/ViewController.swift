@@ -25,13 +25,8 @@ class ViewController: UIViewController {
         let playerCardXDimension = playerCardImageView.frame.origin.x
         let playerCardYDimension = playerCardImageView.frame.origin.y
         
-        let playerCardImageName = blackJackDeck.cards[0].toString()
-        let playerCardImage = UIImage(named: playerCardImageName)
-        let playerCardImageView = UIImageView(image: playerCardImage)
-        //let cardImage = init(template: playerCardImageView)
-        //let cardImage.Create(frameX: Int(playerCardXDimension), frameY: Int(playerCardYDimension), card: blackJackDeck.cards[0], view: gameView)
-         
-        view.addSubview(playerCardImageView)
+        let cardImage = CardImage.init()
+        cardImage.Create(frameX: Int(playerCardXDimension), frameY: Int(playerCardYDimension), card: blackJackDeck.cards[0], view: gameView)
     
         for card in blackJackDeck.cards
         {

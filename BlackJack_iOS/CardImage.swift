@@ -10,13 +10,11 @@ import UIKit
 
 class CardImage
 {
-    init(view: UIView)
+    init()
     {
-        /*view.viewWithTag("playerCardImage")
-        {
-            let template = view.size.width
-        }*/
+        let _: UIImageView
     }
+    
     func Create(frameX: Int, frameY: Int, card: Card, view: UIView)
     {
         let cardImageName = card.toString()
@@ -26,6 +24,12 @@ class CardImage
         let cardImageViewHeight = 128
         
         cardImageView.frame = CGRect(x: frameX, y: frameY, width: cardImageViewWidth, height: cardImageViewHeight)
+        
+        view.addSubview(cardImageView)
     }
     
+    func Remove(imageView: UIImageView)
+    {
+        imageView.removeFromSuperview()
+    }
 }

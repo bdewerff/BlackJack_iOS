@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F6E15602378EA3600C3826F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E155F2378EA3600C3826F /* AppDelegate.swift */; };
 		1F6E15622378EA3600C3826F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E15612378EA3600C3826F /* ViewController.swift */; };
-		1F6E15652378EA3600C3826F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F6E15632378EA3600C3826F /* Main.storyboard */; settings = {ASSET_TAGS = (playerCardImage, ); }; };
+		1F6E15652378EA3600C3826F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F6E15632378EA3600C3826F /* Main.storyboard */; };
 		1F6E15672378EA3900C3826F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F6E15662378EA3900C3826F /* Assets.xcassets */; };
 		1F6E156A2378EA3900C3826F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F6E15682378EA3900C3826F /* LaunchScreen.storyboard */; };
 		1F6E15752378EA3900C3826F /* BlackJack_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E15742378EA3900C3826F /* BlackJack_iOSTests.swift */; };
@@ -19,6 +19,7 @@
 		554590D1237F15F6009E7F88 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554590D0237F15EF009E7F88 /* Deck.swift */; };
 		555A983D2386103C005CBB85 /* CardImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555A983C2386103C005CBB85 /* CardImage.swift */; };
 		555A983F23862817005CBB85 /* HandDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555A983E23862817005CBB85 /* HandDisplay.swift */; };
+		55A8B58523879BB60029758B /* BlackJackActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A8B58423879BB60029758B /* BlackJackActions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		554590D0237F15EF009E7F88 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		555A983C2386103C005CBB85 /* CardImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImage.swift; sourceTree = "<group>"; };
 		555A983E23862817005CBB85 /* HandDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandDisplay.swift; sourceTree = "<group>"; };
+		55A8B58423879BB60029758B /* BlackJackActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackJackActions.swift; sourceTree = "<group>"; wrapsLines = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				1FD48DB3238309C1007253CF /* Hand.swift */,
 				555A983C2386103C005CBB85 /* CardImage.swift */,
 				555A983E23862817005CBB85 /* HandDisplay.swift */,
+				55A8B58423879BB60029758B /* BlackJackActions.swift */,
 			);
 			path = BlackJack_iOS;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55A8B58523879BB60029758B /* BlackJackActions.swift in Sources */,
 				1F6E15622378EA3600C3826F /* ViewController.swift in Sources */,
 				1FD48DB4238309C1007253CF /* Hand.swift in Sources */,
 				554590D1237F15F6009E7F88 /* Deck.swift in Sources */,
