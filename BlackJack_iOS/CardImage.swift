@@ -32,4 +32,9 @@ class CardImage
     {
         imageView.removeFromSuperview()
     }
+    
+    func getOffset(cards: Double) -> Double
+    {
+        return 30 * cards
+    }
 }

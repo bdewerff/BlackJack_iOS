@@ -10,7 +10,7 @@ import UIKit
 
 class BlackJackActions
 {
-    func Deal(player: Player, dealer: Player)
+    /*func Deal(player: Player, dealer: Player)
     {
         player.drawCards(numCards: 2)
         dealer.drawCards(numCards: 2)
@@ -30,5 +30,5 @@ class BlackJackActions
     {
         betAmount *= 2
         return betAmount
-    }
+    }*/
 }

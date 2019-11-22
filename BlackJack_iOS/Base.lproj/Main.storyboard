@@ -41,8 +41,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="dealerCardImageView1" destination="HfJ-p3-6L1" id="jZv-dE-n7F"/>
+                        <outlet property="dealerCardImageView2" destination="oFR-PX-ZaG" id="9qf-0M-O4d"/>
                         <outlet property="gameView" destination="8bC-Xf-vdC" id="1Il-Nl-xG3"/>
-                        <outlet property="playerCardImageView" destination="KCD-GJ-3oG" id="QEF-FZ-se1"/>
+                        <outlet property="playerCardImageView1" destination="KCD-GJ-3oG" id="biM-hl-0mS"/>
+                        <outlet property="playerCardImageView2" destination="G87-0T-j7i" id="eLK-5Q-tNj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
