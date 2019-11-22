@@ -10,17 +10,13 @@ import UIKit
 
 class Player {
     
-    var hand: Hand
+    var hand: Hand!
     var isPlayerDone: Bool = false
-    var deck: Deck
-    
-    init(){
-        hand = 
-    }
+    var deck: Deck!
     
     func drawCards(numCards: Int){
         for _ in 1...numCards{
-            hand.add(card: sel)
+            hand.add(card: self.deck.dealCard())
         }
     }
     
@@ -30,5 +26,17 @@ class Player {
             self.deck.discardCard(cardToReturn: hand.discard())
         }
     }
+    
+    func calculateBlackjackHandValue()->Int{return hand.value()}
+    
+    func checkIfPlayerBusts(){
+        if(calculateBlackjackHandValue()>21){
+            isPlayerDone = true
+        }
+    }
+    
+    func playerStand(){ isPlayerDone = true}
+    
+    func getHand() -> Hand{return hand}
 
 }
