@@ -30,8 +30,7 @@ class Deck {
     shuffle();
     }
     
-    func dealCard()
-    {
+    func dealCard() {
         if !cards.isEmpty {
             return cards.removeFirst(1)
         }else{
