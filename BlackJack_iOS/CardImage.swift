@@ -15,7 +15,7 @@ class CardImage
         let _: UIImageView
     }
     
-    func Create(frameX: Int, frameY: Int, card: Card, view: UIView)
+    func Display(frameX: Int, frameY: Int, card: Card, view: UIView)
     {
         let cardImageName = card.toString()
         let cardImage = UIImage(named: cardImageName)
@@ -31,10 +31,5 @@ class CardImage
     func Remove(imageView: UIImageView)
     {
         imageView.removeFromSuperview()
-    }
-    
-    func getOffset(cards: Double) -> Double
-    {
-        return 30 * cards
     }
 }
