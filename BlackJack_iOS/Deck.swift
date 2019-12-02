@@ -42,18 +42,21 @@ class Deck {
         }
     }
     
-    func discardCard(cardToReturn: Card){
+    func discardCard(cardToReturn: Card)
+    {
         discardedCards.append(cardToReturn)
     }
     
-    func addDiscardsToDeck(){
+    func addDiscardsToDeck()
+    {
         for card in discardedCards{
             cards.append(card)
         }
         shuffle()
     }
     
-    func shuffle(){
+    func shuffle()
+    {
         cards.shuffle()
     }
 
