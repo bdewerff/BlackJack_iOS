@@ -41,11 +41,17 @@
                                 <rect key="frame" x="794" y="257" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Hit"/>
+                                <connections>
+                                    <action selector="hit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c5S-Hy-v2c"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHw-OX-LRE">
                                 <rect key="frame" x="789" y="295" width="41" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Stand"/>
+                                <connections>
+                                    <action selector="stand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cXU-aZ-N8T"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -54,7 +60,9 @@
                         <outlet property="dealButton" destination="9bm-kZ-mDM" id="uSt-Ck-PvV"/>
                         <outlet property="dealerCardImageView1" destination="HfJ-p3-6L1" id="jZv-dE-n7F"/>
                         <outlet property="gameView" destination="8bC-Xf-vdC" id="1Il-Nl-xG3"/>
+                        <outlet property="hitButton" destination="1YI-fI-v8q" id="dOY-nB-5De"/>
                         <outlet property="playerCardImageView1" destination="KCD-GJ-3oG" id="biM-hl-0mS"/>
+                        <outlet property="standButton" destination="EHw-OX-LRE" id="gna-Qd-yie"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

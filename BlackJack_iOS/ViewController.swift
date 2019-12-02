@@ -14,7 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet var playerCardImageView1: UIImageView!
     @IBOutlet var dealerCardImageView1: UIImageView!
     @IBOutlet var dealButton: UIButton!
-
+    @IBOutlet var hitButton: UIButton!
+    @IBOutlet var standButton: UIButton!
+    
     let blackJackDeck = Deck.init(numDecks: 1)
     lazy private var playerCardXDimension = playerCardImageView1.frame.origin.x
     lazy var playerCardYDimension = playerCardImageView1.frame.origin.y
@@ -39,6 +41,17 @@ class ViewController: UIViewController {
         
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
+        hitButton.isHidden = true
+    }
+    
+    @IBAction func stand(_ sender: Any)
+    {
+        player.playerStand()
+    }
+    @IBAction func hit(_ sender: Any)
+    {
+        player.drawCards(numCards: 1)
+        playerHandDisplay.AddNewCardImages(view: gameView)
     }
     
     @IBAction func deal(_ sender: Any)
@@ -49,6 +62,7 @@ class ViewController: UIViewController {
         playerHandDisplay.AddNewCardImages(view: gameView)
         dealerHandDisplay.AddNewCardImages(view: gameView)
         dealButton.isHidden = true
+        hitButton.isHidden = false
     }
     
 }
