@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet var gameView: UIView!
     @IBOutlet var playerCardImageView1: UIImageView!
     @IBOutlet var dealerCardImageView1: UIImageView!
+    @IBOutlet var dealButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +31,10 @@ class ViewController: UIViewController {
         let dealerCardXDimension = dealerCardImageView1.frame.origin.x
         let dealerCardYDimension = dealerCardImageView1.frame.origin.y
         
-        playerHand.add(card: blackJackDeck.cards[0])
-        playerHand.add(card: blackJackDeck.cards[1])
-        dealerHand.add(card: blackJackDeck.cards[2])
-        dealerHand.add(card: blackJackDeck.cards[3])
+        let player = Player.init(hand: playerHand, deck: blackJackDeck)
+        let dealer = Player.init(hand: dealerHand, deck: blackJackDeck)
+        player.drawCards(numCards: 2)
+        dealer.drawCards(numCards: 2)
         
         let playerHandDisplay = HandDisplay.init(hand: playerHand, cardImages: playerHandImages, frameX: Double(playerCardXDimension), frameY: Double(playerCardYDimension))
 
@@ -41,11 +42,6 @@ class ViewController: UIViewController {
         
         playerHandDisplay.AddNewCardImages(view: gameView)
         dealerHandDisplay.AddNewCardImages(view: gameView)
-        
-        for card in blackJackDeck.cards
-        {
-            print(card.toString())
-        }
     }
     
 }

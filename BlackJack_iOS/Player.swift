@@ -14,9 +14,15 @@ class Player {
     var isPlayerDone: Bool = false
     var deck: Deck!
     
+    init(hand: Hand, deck: Deck)
+    {
+        self.hand = hand
+        self.deck = deck
+    }
+    
     func drawCards(numCards: Int){
         for _ in 1...numCards{
-            //hand.add(card: self.deck.dealCard())
+            hand.add(card: self.deck.dealCard())
         }
     }
     

@@ -30,11 +30,13 @@ class Deck {
     shuffle();
     }
     
-    func dealCard()
+    func dealCard() -> Card
     {
         if !cards.isEmpty {
-            return cards.removeFirst(1)
-        }else{
+            let cardToDeal: Card = cards[0]
+            cards.removeFirst(1)
+            return cardToDeal
+        } else{
             addDiscardsToDeck()
             return dealCard()
         }
