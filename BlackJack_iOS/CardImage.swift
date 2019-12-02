@@ -10,14 +10,20 @@ import UIKit
 
 class CardImage
 {
-    init()
+    private var faceUp: Bool
+    
+    init(faceUp: Bool)
     {
         let _: UIImageView
+        self.faceUp = true
     }
     
     func Display(frameX: Int, frameY: Int, card: Card, view: UIView)
     {
-        let cardImageName = card.toString()
+        //if faceUp == true { let cardImageName = card.toString() }
+        //else { let cardImageName = "blue_back" }
+        
+        let cardImageName = card.toString() 
         let cardImage = UIImage(named: cardImageName)
         let cardImageView = UIImageView(image: cardImage)
         let cardImageViewWidth = 90
@@ -31,5 +37,10 @@ class CardImage
     func Remove(imageView: UIImageView)
     {
         imageView.removeFromSuperview()
+    }
+    
+    func flip()
+    {
+        faceUp = !faceUp
     }
 }

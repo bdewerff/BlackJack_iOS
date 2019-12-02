@@ -30,11 +30,19 @@ class HandDisplay
         {
             if index >= self.cardImages.count
             {
-                let cardImage = CardImage.init()
+                let cardImage = CardImage.init(faceUp: true)
                 cardImage.Display(frameX: Int(self.frameX), frameY: Int(self.frameY), card: self.hand.getCards()[index], view: view)
                 self.cardImages.append(cardImage)
                 self.frameX += Double(cardDifference)
             }
+        }
+    }
+    
+    func flipSecondCard()
+    {
+        if self.cardImages.count >= 2
+        {
+            cardImages[1].flip()
         }
     }
 }

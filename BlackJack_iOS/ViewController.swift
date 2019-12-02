@@ -14,34 +14,41 @@ class ViewController: UIViewController {
     @IBOutlet var playerCardImageView1: UIImageView!
     @IBOutlet var dealerCardImageView1: UIImageView!
     @IBOutlet var dealButton: UIButton!
+
+    let blackJackDeck = Deck.init(numDecks: 1)
+    lazy private var playerCardXDimension = playerCardImageView1.frame.origin.x
+    lazy var playerCardYDimension = playerCardImageView1.frame.origin.y
+    lazy var dealerCardXDimension = dealerCardImageView1.frame.origin.x
+    lazy var dealerCardYDimension = dealerCardImageView1.frame.origin.y
+
+    let playerHand = Hand.init()
+    let dealerHand = Hand.init()
+    let playerHandImages: Array<CardImage> = []
+    let dealerHandImages: Array<CardImage> = []
     
-    override func viewDidLoad() {
+    lazy private var player = Player.init(hand: playerHand, deck: blackJackDeck)
+    lazy private var dealer = Player.init(hand: dealerHand, deck: blackJackDeck)
+    
+    lazy private var playerHandDisplay = HandDisplay.init(hand: playerHand, cardImages: playerHandImages, frameX: Double(playerCardXDimension), frameY: Double(playerCardYDimension))
+    
+    lazy private var dealerHandDisplay = HandDisplay.init(hand: dealerHand, cardImages: dealerHandImages, frameX: Double(dealerCardXDimension), frameY: Double(dealerCardYDimension))
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
-        
-        let blackJackDeck = Deck.init(numDecks: 1)
-        let playerHand = Hand.init()
-        let dealerHand = Hand.init()
-        let playerHandImages: Array<CardImage> = []
-        let dealerHandImages: Array<CardImage> = []
-        let playerCardXDimension = playerCardImageView1.frame.origin.x
-        let playerCardYDimension = playerCardImageView1.frame.origin.y
-        let dealerCardXDimension = dealerCardImageView1.frame.origin.x
-        let dealerCardYDimension = dealerCardImageView1.frame.origin.y
-        
-        let player = Player.init(hand: playerHand, deck: blackJackDeck)
-        let dealer = Player.init(hand: dealerHand, deck: blackJackDeck)
+    }
+    
+    @IBAction func deal(_ sender: Any)
+    {
         player.drawCards(numCards: 2)
         dealer.drawCards(numCards: 2)
         
-        let playerHandDisplay = HandDisplay.init(hand: playerHand, cardImages: playerHandImages, frameX: Double(playerCardXDimension), frameY: Double(playerCardYDimension))
-
-        let dealerHandDisplay = HandDisplay.init(hand: dealerHand, cardImages: dealerHandImages, frameX: Double(dealerCardXDimension), frameY: Double(dealerCardYDimension))
-        
         playerHandDisplay.AddNewCardImages(view: gameView)
         dealerHandDisplay.AddNewCardImages(view: gameView)
+        dealButton.isHidden = true
     }
     
 }
