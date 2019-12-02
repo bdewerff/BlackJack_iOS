@@ -31,8 +31,8 @@ class HandDisplay
             if index >= self.cardImages.count
             {
                 let cardImage = CardImage.init(faceUp: true)
-                cardImage.Display(frameX: Int(self.frameX), frameY: Int(self.frameY), card: self.hand.getCards()[index], view: view)
                 self.cardImages.append(cardImage)
+                cardImage.Display(frameX: Int(self.frameX), frameY: Int(self.frameY), card: self.hand.getCards()[index], view: view)
                 self.frameX += Double(cardDifference)
             }
         }
