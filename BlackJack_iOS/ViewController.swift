@@ -90,5 +90,23 @@ class ViewController: UIViewController {
         gameWinText.text = array[0] as? String
         gameWinText.isHidden = false
     }
+    
+    
+    func dealerPlay(){
+        dealerHandDisplay.flipSecondCard()
+        let minDealerLimit: Int = 17
+        
+        while dealer.calculateBlackjackHandValue() < minDealerLimit{
+            blackJackActions.Hit(player: dealer)
+            dealerHandDisplay.AddNewCardImages()
+            dealerHandDisplay.display(view: <#UIView#>)
+        }
+        
+        if dealer.calculateBlackjackHandValue() >= minDealerLimit{
+            dealerHandDisplay.AddNewCardImages()
+            dealerHandDisplay.display(view: <#UIView#>)
+            displayGameConditions()
+        }
+    }
 }
 
