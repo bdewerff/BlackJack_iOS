@@ -40,13 +40,12 @@ class BlackJackActions
     
     func doubleDown(betAmount: Int) -> Int
     {
-        //betAmount *= 2
-        return betAmount
+        return betAmount*2
     }
     
     func gameConditions(amountBet: Int, player: Player, dealer: Player)-> Array<Any>{
-        var playerHandValue: Int = player.calculateBlackjackHandValue()
-        var dealerHandValue: Int = dealer.calculateBlackjackHandValue()
+        let playerHandValue: Int = player.calculateBlackjackHandValue()
+        let dealerHandValue: Int = dealer.calculateBlackjackHandValue()
         var array = [String]()
         
         if player.calculateBlackjackHandValue() > blackJackValue{
