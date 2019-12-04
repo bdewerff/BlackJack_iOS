@@ -65,5 +65,20 @@ class ViewController: UIViewController {
         hitButton.isHidden = false
     }
     
+    func dealerPlay(){
+        dealerHandDisplay.flipSecondCard()
+        var minDealerLimit: Int = 17
+        
+        while dealer.calculateBlackjackHandValue() < minDealerLimit{
+            BlackJackActions.hit(dealer)
+            dealerHandDisplay.display()
+        }
+        
+        if dealer.calculateBlackjackHandValue() >= minDealerLimit{
+            dealerHandDisplay.display()
+            displayGameConditions()
+        }
+    }
+    
 }
 
