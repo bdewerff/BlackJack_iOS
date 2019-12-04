@@ -53,6 +53,7 @@ class ViewController: UIViewController {
     @IBAction func stand(_ sender: Any)
     {
         player.playerStand()
+        dealerPlay()
     }
     @IBAction func hit(_ sender: Any)
     {
@@ -99,14 +100,16 @@ class ViewController: UIViewController {
         while dealer.calculateBlackjackHandValue() < minDealerLimit{
             blackJackActions.Hit(player: dealer)
             dealerHandDisplay.AddNewCardImages()
-            dealerHandDisplay.display(view: <#UIView#>)
+            dealerHandDisplay.display(view: gameView)
         }
         
         if dealer.calculateBlackjackHandValue() >= minDealerLimit{
             dealerHandDisplay.AddNewCardImages()
-            dealerHandDisplay.display(view: <#UIView#>)
+            dealerHandDisplay.display(view: gameView)
             displayGameConditions()
         }
     }
+    
+    
 }
 
