@@ -20,10 +20,11 @@ class CardImage
     
     func Display(frameX: Int, frameY: Int, card: Card, view: UIView)
     {
-        //if faceUp == true { let cardImageName = card.toString() }
-        //else { let cardImageName = "blue_back" }
-        
-        let cardImageName = card.toString() 
+        var cardImageName = card.toString()
+        if self.faceUp == false
+        {
+            cardImageName = "blue_back"
+        }
         let cardImage = UIImage(named: cardImageName)
         let cardImageView = UIImageView(image: cardImage)
         let cardImageViewWidth = 90

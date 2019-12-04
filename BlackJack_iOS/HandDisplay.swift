@@ -24,7 +24,7 @@ class HandDisplay
         self.frameY = frameY
     }
     
-    func AddNewCardImages(view: UIView)
+    func AddNewCardImages()
     {
         for index in 0..<self.hand.size()
         {
@@ -32,9 +32,18 @@ class HandDisplay
             {
                 let cardImage = CardImage.init(faceUp: true)
                 self.cardImages.append(cardImage)
-                cardImage.Display(frameX: Int(self.frameX), frameY: Int(self.frameY), card: self.hand.getCards()[index], view: view)
-                self.frameX += Double(cardDifference)
             }
+        }
+    }
+    
+    func display(view: UIView)
+    {
+        var index = 0
+        for cardImage in self.cardImages
+        {
+            cardImage.Display(frameX: Int(self.frameX), frameY: Int(self.frameY), card: self.hand.getCards()[index], view: view)
+            self.frameX += Double(cardDifference)
+            index += 1
         }
     }
     
