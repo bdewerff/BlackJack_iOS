@@ -28,26 +28,27 @@ class BlackJackActions
         dealer.drawCards(numCards: 2)
     }
     
-    func stand(player: Player)
+    func Stand(player: Player)
     {
         player.playerStand()
     }
     
-    func hit(player: Player)
+    func Hit(player: Player)
     {
         player.drawCards(numCards: 1)
     }
     
-    func doubleDown(betAmount: Int) -> Int
+    func DoubleDown(betAmount: Int) -> Int
     {
         //betAmount *= 2
         return betAmount
     }
     
-    func gameConditions(amountBet: Int, player: Player, dealer: Player)-> Array<Any>{
-        var playerHandValue: Int = player.calculateBlackjackHandValue()
-        var dealerHandValue: Int = dealer.calculateBlackjackHandValue()
-        var array = [String]()
+    func GameConditions(player: Player, dealer: Player)-> Array<Any>
+    {
+        let playerHandValue: Int = player.calculateBlackjackHandValue()
+        let dealerHandValue: Int = dealer.calculateBlackjackHandValue()
+        var array: [String] = [""]
         
         if player.calculateBlackjackHandValue() > blackJackValue{
             array[0] = "You have busted!"
@@ -65,5 +66,13 @@ class BlackJackActions
             array[0] = "You Win"
         }
         return array
+    }
+    
+    func checkBlackJack(player: Player)
+    {
+        if player.calculateBlackjackHandValue() == blackJackValue
+        {
+            
+        }
     }
 }
