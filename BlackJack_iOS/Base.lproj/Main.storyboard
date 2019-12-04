@@ -53,13 +53,13 @@
                                     <action selector="stand:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cXU-aZ-N8T"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E1V-ap-scl" userLabel="GameWinText">
-                                <rect key="frame" x="304" y="193" width="97" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doX-KA-94m">
+                                <rect key="frame" x="315" y="197" width="173" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -67,7 +67,7 @@
                         <outlet property="dealButton" destination="9bm-kZ-mDM" id="uSt-Ck-PvV"/>
                         <outlet property="dealerCardImageView1" destination="HfJ-p3-6L1" id="jZv-dE-n7F"/>
                         <outlet property="gameView" destination="8bC-Xf-vdC" id="1Il-Nl-xG3"/>
-                        <outlet property="gameWinText" destination="E1V-ap-scl" id="Sbm-e5-bcP"/>
+                        <outlet property="gameWinText" destination="doX-KA-94m" id="Iai-Zz-pfu"/>
                         <outlet property="hitButton" destination="1YI-fI-v8q" id="dOY-nB-5De"/>
                         <outlet property="playerCardImageView1" destination="KCD-GJ-3oG" id="biM-hl-0mS"/>
                         <outlet property="standButton" destination="EHw-OX-LRE" id="gna-Qd-yie"/>

@@ -56,7 +56,7 @@ class BlackJackActions
             array[0] = "Dealer has busted, You Win!"
         }
         else if playerHandValue < blackJackValue && playerHandValue == dealerHandValue{
-            array[0] = "It is a push. You get your money back."
+            array[0] = "It is a push."
         }
         else if playerHandValue < blackJackValue && dealerHandValue > playerHandValue{
             array[0] = "Dealer Wins"

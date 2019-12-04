@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet var dealButton: UIButton!
     @IBOutlet var hitButton: UIButton!
     @IBOutlet var standButton: UIButton!
-    @IBOutlet var gameWinText: UITextField!
+    @IBOutlet var gameWinText: UILabel!
     
     let blackJackDeck = Deck.init(numDecks: 1)
     lazy private var playerCardXDimension = playerCardImageView1.frame.origin.x
@@ -71,8 +71,6 @@ class ViewController: UIViewController {
     @IBAction func deal(_ sender: Any)
     {
         blackJackActions.Deal(player: player, dealer: dealer)
-        //player.drawCards(numCards: 2)
-        //dealer.drawCards(numCards: 2)
         
         playerHandDisplay.AddNewCardImages()
         dealerHandDisplay.AddNewCardImages()

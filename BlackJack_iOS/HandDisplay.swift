@@ -39,11 +39,13 @@ class HandDisplay
     func display(view: UIView)
     {
         var index = 0
+        self.frameX = 291
         for cardImage in self.cardImages
         {
             cardImage.Display(frameX: Int(self.frameX), frameY: Int(self.frameY), card: self.hand.getCards()[index], view: view)
             self.frameX += Double(cardDifference)
             index += 1
+            
         }
     }
     
