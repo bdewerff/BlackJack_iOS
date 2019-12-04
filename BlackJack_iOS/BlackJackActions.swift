@@ -40,8 +40,7 @@ class BlackJackActions
     
     func DoubleDown(betAmount: Int) -> Int
     {
-        //betAmount *= 2
-        return betAmount
+        return betAmount*2
     }
     
     func GameConditions(player: Player, dealer: Player)-> Array<Any>
