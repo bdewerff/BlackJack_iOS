@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet var hitButton: UIButton!
     @IBOutlet var standButton: UIButton!
     @IBOutlet var gameWinText: UILabel!
+    @IBOutlet var welcomeText: UILabel!
     
     let blackJackDeck = Deck.init(numDecks: 1)
     lazy private var playerCardXDimension = playerCardImageView1.frame.origin.x
@@ -42,7 +43,6 @@ class ViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
         hitButton.isHidden = true
@@ -55,11 +55,13 @@ class ViewController: UIViewController {
         player.playerStand()
         dealerPlay()
     }
+    
     @IBAction func hit(_ sender: Any)
     {
         blackJackActions.Hit(player: player)
         playerHandDisplay.AddNewCardImages()
         playerHandDisplay.display(view: gameView)
+        checkBlackJack(player: player)
         
         if player.calculateBlackjackHandValue() > blackJackValue
         {
@@ -72,15 +74,31 @@ class ViewController: UIViewController {
     @IBAction func deal(_ sender: Any)
     {
         blackJackActions.Deal(player: player, dealer: dealer)
-        
         playerHandDisplay.AddNewCardImages()
         dealerHandDisplay.AddNewCardImages()
         dealerHandDisplay.flipSecondCard()
         dealerHandDisplay.display(view: gameView)
         playerHandDisplay.display(view: gameView)
         dealButton.isHidden = true
+        welcomeText.isHidden = true
         hitButton.isHidden = false
         standButton.isHidden = false
+        checkBlackJack(player: player)
+    }
+    
+    func checkBlackJack(player: Player)
+    {
+        if player.calculateBlackjackHandValue() == blackJackValue
+        {
+            if player.hand.size() > 2
+            {
+                dealerPlay()
+            }
+            gameWinText.text = "You have blackjack!"
+            gameWinText.isHidden = false
+            standButton.isHidden = true
+            hitButton.isHidden = true
+        }
     }
     
     func displayGameConditions()
@@ -89,7 +107,6 @@ class ViewController: UIViewController {
         gameWinText.text = array[0] as? String
         gameWinText.isHidden = false
     }
-    
     
     func dealerPlay(){
         dealerHandDisplay.flipSecondCard()

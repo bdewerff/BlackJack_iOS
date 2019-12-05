@@ -66,12 +66,4 @@ class BlackJackActions
         }
         return array
     }
-    
-    func checkBlackJack(player: Player)
-    {
-        if player.calculateBlackjackHandValue() == blackJackValue
-        {
-            
-        }
-    }
 }
