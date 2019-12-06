@@ -106,6 +106,7 @@ class ViewController: UIViewController {
         var array = blackJackActions.GameConditions(player: player, dealer: dealer)
         gameWinText.text = array[0] as? String
         gameWinText.isHidden = false
+        clearTable()
     }
     
     func dealerPlay(){
@@ -133,12 +134,14 @@ class ViewController: UIViewController {
         dealer.discardHand()
     }
     
-    let timer2 = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { timer in
-        
+    
+    
+    let timer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { timer in
+        ViewController.self.clearTable()
     }
     
     func clearTableDelay(){
-        
+        timer()
     }
     
     
