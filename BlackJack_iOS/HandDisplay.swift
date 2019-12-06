@@ -56,4 +56,10 @@ class HandDisplay
             cardImages[1].flip()
         }
     }
+    
+    func clear(){
+        for _ in cardImages{
+            cardImages.remove(at: 0)
+        }
+    }
 }

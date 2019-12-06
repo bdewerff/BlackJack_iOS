@@ -125,6 +125,22 @@ class ViewController: UIViewController {
         }
     }
     
+    func clearTable(){
+        playerHandDisplay.clear()
+        dealerHandDisplay.clear()
+        gameWinText.isHidden = true
+        player.discardHand()
+        dealer.discardHand()
+    }
+    
+    let timer2 = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { timer in
+        
+    }
+    
+    func clearTableDelay(){
+        
+    }
+    
     
 }
 
