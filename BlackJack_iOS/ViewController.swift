@@ -106,7 +106,8 @@ class ViewController: UIViewController {
         var array = blackJackActions.GameConditions(player: player, dealer: dealer)
         gameWinText.text = array[0] as? String
         gameWinText.isHidden = false
-        clearTable()
+        //clearTable()
+        perform(#selector(clearTable), with: nil, afterDelay: 3)
     }
     
     func dealerPlay(){
@@ -126,7 +127,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func clearTable(){
+    @objc func clearTable(){
         playerHandDisplay.clear()
         dealerHandDisplay.clear()
         gameWinText.isHidden = false
