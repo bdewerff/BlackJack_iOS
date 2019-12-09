@@ -58,8 +58,8 @@ class HandDisplay
     }
     
     func clear(){
-        for _ in cardImages{
-            cardImages.remove(at: 0)
+        for cardImage in cardImages{
+            cardImage.Remove(imageView: )
         }
     }
 }
