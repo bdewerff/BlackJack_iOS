@@ -18,7 +18,9 @@ class Hand{
         cards.append(card)
     }
     
-    func discard() -> Card{return cards.remove(at: 0)}
+    func discard() -> Card
+    {
+        return cards.remove(at: 0)}
     
     func value() -> Int{
         

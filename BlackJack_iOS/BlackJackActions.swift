@@ -59,10 +59,10 @@ class BlackJackActions
             array[0] = "It is a push."
         }
         else if playerHandValue < blackJackValue && dealerHandValue > playerHandValue{
-            array[0] = "Dealer Wins"
+            array[0] = "Dealer Wins."
         }
         else{
-            array[0] = "You Win"
+            array[0] = "You Win!"
         }
         return array
     }

@@ -11,14 +11,15 @@ import UIKit
 class CardImage
 {
     private var faceUp: Bool
+    private var cardImageView: UIImageView
     
-    init(faceUp: Bool)
+    init()
     {
-        let _: UIImageView
+        self.cardImageView = UIImageView(image: UIImage(named: "blue_back"))
         self.faceUp = true
     }
     
-    func Display(frameX: Int, frameY: Int, card: Card, view: UIView)
+    func Display(frameX: Int, frameY: Int, card: Card, view: UIView) -> UIImageView
     {
         var cardImageName = card.toString()
         if self.faceUp == false
@@ -26,18 +27,20 @@ class CardImage
             cardImageName = "blue_back"
         }
         let cardImage = UIImage(named: cardImageName)
-        let cardImageView = UIImageView(image: cardImage)
+        self.cardImageView = UIImageView(image: cardImage)
         let cardImageViewWidth = 90
         let cardImageViewHeight = 128
         
-        cardImageView.frame = CGRect(x: frameX, y: frameY, width: cardImageViewWidth, height: cardImageViewHeight)
+        self.cardImageView.frame = CGRect(x: frameX, y: frameY, width: cardImageViewWidth, height: cardImageViewHeight)
         
-        view.addSubview(cardImageView)
+        //view.addSubview(self.cardImageView)
+        return self.cardImageView
     }
     
-    func Remove(imageView: UIImageView)
+    func Remove()
     {
-        imageView.removeFromSuperview()
+        self.cardImageView.removeFromSuperview()
+        //self.cardImageView.image = nil
     }
     
     func flip()

@@ -28,7 +28,8 @@ class Player {
     
     func discardHand(){
         let handSize = hand.size()
-        for _ in 1...handSize{
+        for _ in stride(from: 0, to: handSize, by: 1)
+        {
             self.deck.discardCard(cardToReturn: hand.discard())
         }
     }

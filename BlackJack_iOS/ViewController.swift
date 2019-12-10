@@ -20,23 +20,21 @@ class ViewController: UIViewController {
     @IBOutlet var welcomeText: UILabel!
     
     let blackJackDeck = Deck.init(numDecks: 1)
-    lazy private var playerCardXDimension = playerCardImageView1.frame.origin.x
-    lazy var playerCardYDimension = playerCardImageView1.frame.origin.y
-    lazy var dealerCardXDimension = dealerCardImageView1.frame.origin.x
-    lazy var dealerCardYDimension = dealerCardImageView1.frame.origin.y
+    lazy var playerCardXDimension = 291
+    lazy var playerCardYDimension = 257
+    lazy var dealerCardXDimension = 291
+    lazy var dealerCardYDimension = 20
     
     let blackJackValue = 21
     let playerHand = Hand.init()
     let dealerHand = Hand.init()
-    let playerHandImages: Array<CardImage> = []
-    let dealerHandImages: Array<CardImage> = []
     
     lazy private var player = Player.init(hand: playerHand, deck: blackJackDeck)
     lazy private var dealer = Player.init(hand: dealerHand, deck: blackJackDeck)
     
-    lazy private var playerHandDisplay = HandDisplay.init(hand: playerHand, cardImages: playerHandImages, frameX: Double(playerCardXDimension), frameY: Double(playerCardYDimension))
+    lazy private var playerHandDisplay = HandDisplay.init(hand: playerHand, frameX: Double(playerCardXDimension), frameY: Double(playerCardYDimension))
     
-    lazy private var dealerHandDisplay = HandDisplay.init(hand: dealerHand, cardImages: dealerHandImages, frameX: Double(dealerCardXDimension), frameY: Double(dealerCardYDimension))
+    lazy private var dealerHandDisplay = HandDisplay.init(hand: dealerHand, frameX: Double(dealerCardXDimension), frameY: Double(dealerCardYDimension))
     
     lazy private var blackJackActions = BlackJackActions.init(deck: blackJackDeck, player: player, dealer: dealer)
     
@@ -53,14 +51,15 @@ class ViewController: UIViewController {
     @IBAction func stand(_ sender: Any)
     {
         player.playerStand()
+        standButton.isHidden = true
+        hitButton.isHidden = true
         dealerPlay()
     }
     
     @IBAction func hit(_ sender: Any)
     {
         blackJackActions.Hit(player: player)
-        playerHandDisplay.AddNewCardImages()
-        playerHandDisplay.display(view: gameView)
+        playerHandDisplay.AddNewCardImages(view: gameView)
         checkBlackJack(player: player)
         
         if player.calculateBlackjackHandValue() > blackJackValue
@@ -74,11 +73,9 @@ class ViewController: UIViewController {
     @IBAction func deal(_ sender: Any)
     {
         blackJackActions.Deal(player: player, dealer: dealer)
-        playerHandDisplay.AddNewCardImages()
-        dealerHandDisplay.AddNewCardImages()
-        dealerHandDisplay.flipSecondCard()
-        dealerHandDisplay.display(view: gameView)
-        playerHandDisplay.display(view: gameView)
+        playerHandDisplay.AddNewCardImages(view: gameView)
+        dealerHandDisplay.AddNewCardImages(view: gameView)
+        dealerHandDisplay.flipSecondCard(view: gameView)
         dealButton.isHidden = true
         welcomeText.isHidden = true
         hitButton.isHidden = false
@@ -98,6 +95,7 @@ class ViewController: UIViewController {
             gameWinText.isHidden = false
             standButton.isHidden = true
             hitButton.isHidden = true
+            perform(#selector(clearTable), with: nil, afterDelay: 3)
         }
     }
     
@@ -106,47 +104,37 @@ class ViewController: UIViewController {
         var array = blackJackActions.GameConditions(player: player, dealer: dealer)
         gameWinText.text = array[0] as? String
         gameWinText.isHidden = false
-        //clearTable()
         perform(#selector(clearTable), with: nil, afterDelay: 3)
     }
     
     func dealerPlay(){
-        dealerHandDisplay.flipSecondCard()
+        dealerHandDisplay.flipSecondCard(view: gameView)
+        dealerHandDisplay.AddNewCardImages(view: gameView)
         let minDealerLimit: Int = 17
         
-        while dealer.calculateBlackjackHandValue() < minDealerLimit{
+        while dealer.calculateBlackjackHandValue() < minDealerLimit
+        {
             blackJackActions.Hit(player: dealer)
-            dealerHandDisplay.AddNewCardImages()
-            dealerHandDisplay.display(view: gameView)
+            dealerHandDisplay.AddNewCardImages(view: gameView)
         }
         
-        if dealer.calculateBlackjackHandValue() >= minDealerLimit{
-            dealerHandDisplay.AddNewCardImages()
-            dealerHandDisplay.display(view: gameView)
+        if dealer.calculateBlackjackHandValue() >= minDealerLimit
+        {
+            dealerHandDisplay.AddNewCardImages(view: gameView)
             displayGameConditions()
         }
     }
     
-    @objc func clearTable(){
+    @objc func clearTable()
+    {
         playerHandDisplay.clear()
         dealerHandDisplay.clear()
-        gameWinText.isHidden = false
+        gameWinText.isHidden = true
+        hitButton.isHidden = true
+        standButton.isHidden = true
+        dealButton.isHidden = false
         player.discardHand()
         dealer.discardHand()
     }
-    
-    
-    
-    
-    
-//    let timer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { timer in
-//
-//    }
-//
-//    func clearTableDelay(){
-//        timer()
-//    }
-    
-    
 }
 
